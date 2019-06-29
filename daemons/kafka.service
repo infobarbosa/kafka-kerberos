@@ -1,0 +1,22 @@
+[Unit]
+Description=Apache Kafka server (broker)
+Documentation=http://kafka.apache.org/documentation.html
+Requires=network.target remote-fs.target
+After=network.target remote-fs.target
+
+[Service]
+Type=simple
+Environment="JMX_PORT=9999"
+Environment="KAFKA_OPTS= \
+	-Dcom.sun.management.jmxremote.authenticate=false \
+	-Dcom.sun.management.jmxremote.ssl=false \
+	-Djava.rmi.server.hostname=kafka1.infobarbosa.github.com \
+	-Dcom.sun.management.jmxremote.port=9999 \
+	-Dcom.sun.management.jmxremote.rmi.port=9999 \
+	-Djava.net.preferIPv4Stack=true"
+
+ExecStart=/usr/bin/kafka-server-start /etc/kafka/server.properties
+ExecStop=/usr/bin/kafka-server-stop
+
+[Install]
+WantedBy=multi-user.target

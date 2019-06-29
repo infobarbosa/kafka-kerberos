@@ -1,0 +1,7 @@
+192.168.56.10  zookeeper1.infobarbosa.github.com zookeeper1
+192.168.56.11  kafka1.infobarbosa.github.com kafka1
+192.168.56.12  kafka2.infobarbosa.github.com kafka2
+192.168.56.13  kafka3.infobarbosa.github.com kafka3
+192.168.56.14  kafka-client.infobarbosa.github.com kafka-client
+192.168.56.15  kerberos.infobarbosa.github.com kerberos
+192.168.56.16  ca.infobarbosa.github.com ca

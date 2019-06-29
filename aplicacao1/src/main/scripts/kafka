@@ -1,0 +1,1 @@
+kafka-topics --zookeeper zookeeper:2181/kafka --create --topic teste --replication-factor 3 --partitions 6 --config retention.ms=300000
