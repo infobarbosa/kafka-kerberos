@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       v.name = "ca-lab-security.vagrant"
     end
 
-    ca.vm.provision "file", source: "hosts", destination: "hosts"
+    ca.vm.provision "file", source: "config-files/hosts", destination: "hosts"
 
     ca.vm.provision "shell", inline: <<-SHELL
       #setup para passwordless
@@ -49,10 +49,10 @@ Vagrant.configure("2") do |config|
       v.name = "kerberos-lab-security.vagrant"
     end
 
-    kerberos.vm.provision "file", source: "kerberos-configs/kdc.conf", destination: "kdc.conf"
-    kerberos.vm.provision "file", source: "kerberos-configs/kadm5.acl", destination: "kadm5.acl"
-    kerberos.vm.provision "file", source: "kerberos-configs/krb5.conf", destination: "krb5.conf"
-    kerberos.vm.provision "file", source: "hosts", destination: "hosts"
+    kerberos.vm.provision "file", source: "config-files/kdc.conf", destination: "kdc.conf"
+    kerberos.vm.provision "file", source: "config-files/kadm5.acl", destination: "kadm5.acl"
+    kerberos.vm.provision "file", source: "config-files/krb5.conf", destination: "krb5.conf"
+    kerberos.vm.provision "file", source: "config-files/hosts", destination: "hosts"
 
     kerberos.vm.provision "shell", inline: <<-SHELL
       #setup para passwordless
@@ -128,7 +128,7 @@ Vagrant.configure("2") do |config|
     end
 
     zookeeper1.vm.provision "file", source: "daemons/zookeeper.service", destination: "zookeeper.service"
-    zookeeper1.vm.provision "file", source: "hosts", destination: "hosts"
+    zookeeper1.vm.provision "file", source: "config-files/hosts", destination: "hosts"
 
     zookeeper1.vm.provision "shell", inline: <<-SHELL
       #setup para passwordless
@@ -170,9 +170,9 @@ Vagrant.configure("2") do |config|
     end
 
     kafka1.vm.provision "file", source: "daemons/kafka.service", destination: "kafka.service"
-    kafka1.vm.provision "file", source: "property-files/server1.properties", destination: "server.properties"
-    kafka1.vm.provision "file", source: "hosts", destination: "hosts"
-    kafka1.vm.provision "file", source: "kerberos-configs/krb5.conf", destination: "krb5.conf"
+    kafka1.vm.provision "file", source: "config-files/server1.properties", destination: "server.properties"
+    kafka1.vm.provision "file", source: "config-files/hosts", destination: "hosts"
+    kafka1.vm.provision "file", source: "config-files/krb5.conf", destination: "krb5.conf"
 
     #root script
     $script1 = <<-SCRIPT
@@ -271,9 +271,9 @@ Vagrant.configure("2") do |config|
     end
 
     kafka2.vm.provision "file", source: "daemons/kafka.service", destination: "kafka.service"
-    kafka2.vm.provision "file", source: "property-files/server2.properties", destination: "server.properties"
-    kafka2.vm.provision "file", source: "hosts", destination: "hosts"
-    kafka2.vm.provision "file", source: "kerberos-configs/krb5.conf", destination: "krb5.conf"
+    kafka2.vm.provision "file", source: "config-files/server2.properties", destination: "server.properties"
+    kafka2.vm.provision "file", source: "config-files/hosts", destination: "hosts"
+    kafka2.vm.provision "file", source: "config-files/krb5.conf", destination: "krb5.conf"
 
     #root script
     $script1 = <<-SCRIPT
@@ -373,9 +373,9 @@ Vagrant.configure("2") do |config|
     end
 
     kafka3.vm.provision "file", source: "daemons/kafka.service", destination: "kafka.service"
-    kafka3.vm.provision "file", source: "property-files/server3.properties", destination: "server.properties"
-    kafka3.vm.provision "file", source: "hosts", destination: "hosts"
-    kafka3.vm.provision "file", source: "kerberos-configs/krb5.conf", destination: "krb5.conf"
+    kafka3.vm.provision "file", source: "config-files/server3.properties", destination: "server.properties"
+    kafka3.vm.provision "file", source: "config-files/hosts", destination: "hosts"
+    kafka3.vm.provision "file", source: "config-files/krb5.conf", destination: "krb5.conf"
 
     #root script
     $script1 = <<-SCRIPT
@@ -475,8 +475,8 @@ Vagrant.configure("2") do |config|
       v.name = "kafka-client-lab-security.vagrant"
     end
 
-    client.vm.provision "file", source: "hosts", destination: "hosts"
-    client.vm.provision "file", source: "kerberos-configs/krb5.conf", destination: "krb5.conf"
+    client.vm.provision "file", source: "config-files/hosts", destination: "hosts"
+    client.vm.provision "file", source: "config-files/krb5.conf", destination: "krb5.conf"
 
     #root script
     $script1 = <<-SCRIPT
