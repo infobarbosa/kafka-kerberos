@@ -19,9 +19,9 @@ Vagrant.configure("2") do |config|
     ca.vm.provision "shell", inline: <<-SHELL
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/id_rsa /home/vagrant/.ssh/
-      cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
-      cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+      cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
+      cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
 
@@ -57,9 +57,9 @@ Vagrant.configure("2") do |config|
     kerberos.vm.provision "shell", inline: <<-SHELL
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/id_rsa /home/vagrant/.ssh/
-      cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
-      cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+      cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
+      cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
 
@@ -133,9 +133,9 @@ Vagrant.configure("2") do |config|
     zookeeper1.vm.provision "shell", inline: <<-SHELL
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/id_rsa /home/vagrant/.ssh/
-      cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
-      cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+      cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
+      cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
 
@@ -207,9 +207,9 @@ Vagrant.configure("2") do |config|
 
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/id_rsa /home/vagrant/.ssh/
-      cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
-      cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+      cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
+      cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
 
@@ -308,9 +308,9 @@ Vagrant.configure("2") do |config|
 
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/id_rsa /home/vagrant/.ssh/
-      cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
-      cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+      cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
+      cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
 
@@ -410,9 +410,9 @@ Vagrant.configure("2") do |config|
 
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/id_rsa /home/vagrant/.ssh/
-      cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
-      cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+      cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
+      cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
 
@@ -502,9 +502,9 @@ Vagrant.configure("2") do |config|
 
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/id_rsa /home/vagrant/.ssh/
-      cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
-      cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+      cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
+      cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
 
