@@ -20,6 +20,7 @@ Vagrant.configure("2") do |config|
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
       cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      chmod 600 /home/vagrant/.ssh/id_rsa
       cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
       cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
@@ -58,6 +59,7 @@ Vagrant.configure("2") do |config|
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
       cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      chmod 600 /home/vagrant/.ssh/id_rsa
       cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
       cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
@@ -134,6 +136,7 @@ Vagrant.configure("2") do |config|
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
       cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      chmod 600 /home/vagrant/.ssh/id_rsa
       cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
       cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
@@ -208,6 +211,7 @@ Vagrant.configure("2") do |config|
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
       cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      chmod 600 /home/vagrant/.ssh/id_rsa
       cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
       cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
@@ -309,6 +313,7 @@ Vagrant.configure("2") do |config|
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
       cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      chmod 600 /home/vagrant/.ssh/id_rsa
       cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
       cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
@@ -411,6 +416,7 @@ Vagrant.configure("2") do |config|
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
       cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      chmod 600 /home/vagrant/.ssh/id_rsa
       cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
       cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
@@ -503,6 +509,7 @@ Vagrant.configure("2") do |config|
       #setup para passwordless
       mkdir -p /home/vagrant/.ssh
       cp /vagrant/config-files/id_rsa /home/vagrant/.ssh/
+      chmod 600 /home/vagrant/.ssh/id_rsa
       cp /vagrant/config-files/id_rsa.pub /home/vagrant/.ssh/
       cat /vagrant/config-files/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
       chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
