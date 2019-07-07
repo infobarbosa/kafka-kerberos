@@ -6,10 +6,10 @@ vagrant up
 ```
 
 Nesse laboratorio eu jah deixei prontas as keytabs para:
-- "aplicacao1" - aplicacao produtora, escreve em um topico "teste"  no Kafka
-- "aplicacao2" - aplicacao consumidora, leh de um topico "teste" no Kafka
-- "admin" - usuario que emularia um administrador do sistema. vamos utiliza-lo em outro laboratorio de autorizacao.
-- "kafka" - usuario de sistema do Kafka.
+- **aplicacao1** - aplicacao produtora, escreve em um topico "teste"  no Kafka
+- **aplicacao2** - aplicacao consumidora, leh de um topico "teste" no Kafka
+- **admin** - usuario que emularia um administrador do sistema. vamos utiliza-lo em outro laboratorio de autorizacao.
+- **kafka** - usuario de sistema do Kafka.
 
 Para conferir essas informacoes, voce deve se conectar na instancia do Kerberos
 ```
@@ -18,7 +18,7 @@ vagrant ssh kerberos
 ls -latr keytabs
 ```
 
-Perceba que hah tres keytabs para o kafka ("kafka1", "kafka1.service.keytab", "kafka2.service.keytab", "kafka3.service.keytab").
+Perceba que hah tres keytabs para o kafka ("kafka1.service.keytab", "kafka2.service.keytab", "kafka3.service.keytab").
 
 Eh necessario porque cada broker precisa de uma keytab distinta que inclui o hostname (ou DNS).
 
@@ -34,12 +34,12 @@ Agora voce precisa se conectar em cada maquina Kafka e fazer o setup para que o 
 
 ### Etapa 1 - server.properties
 
-Abra o arquivo server.properties e adicionar o endpoint para SASL
+Abra o arquivo _server.properties_ e adicionar o endpoint para SASL
 ```
 vi /etc/kafka/server.properties
 ```
 
-Encontre o parametro "listeners" abaixo:
+Encontre o parametro _listeners_ abaixo:
 ```
 listeners=PLAINTEXT://0.0.0.0:9092,SSL://0.0.0.0:9093
 ```
@@ -265,7 +265,7 @@ sudo cat /var/log/krb5kdc.log
 
 Perceba as mensagens que apontam a autenticacao das aplicacoes clientes em cada broker:
 
-aplicacao1
+**aplicacao1**
 ```
 Jul 07 20:52:17 kerberos.infobarbosa.github.com krb5kdc[5304](info): TGS_REQ (4 etypes {18 17 16 23}) 192.168.56.14: ISSUE: authtime 1562532736, etypes {rep=18 tkt=18 ses=18}, aplicacao1@KAFKA.INFOBARBOSA for kafka/kafka1.infobarbosa.github.com@KAFKA.INFOBARBOSA
 Jul 07 20:52:18 kerberos.infobarbosa.github.com krb5kdc[5304](info): TGS_REQ (4 etypes {18 17 16 23}) 192.168.56.14: ISSUE: authtime 1562532736, etypes {rep=18 tkt=18 ses=18}, aplicacao1@KAFKA.INFOBARBOSA for kafka/kafka3.infobarbosa.github.com@KAFKA.INFOBARBOSA
@@ -273,7 +273,7 @@ Jul 07 20:52:18 kerberos.infobarbosa.github.com krb5kdc[5304](info): TGS_REQ (4 
 
 ```
 
-aplicacao2
+**aplicacao2**
 ```
 Jul 07 21:04:42 kerberos.infobarbosa.github.com krb5kdc[5304](info): TGS_REQ (4 etypes {18 17 16 23}) 192.168.56.14: ISSUE: authtime 1562533481, etypes {rep=18 tkt=18 ses=18}, aplicacao2@KAFKA.INFOBARBOSA for kafka/kafka1.infobarbosa.github.com@KAFKA.INFOBARBOSA
 Jul 07 21:04:42 kerberos.infobarbosa.github.com krb5kdc[5304](info): TGS_REQ (4 etypes {18 17 16 23}) 192.168.56.14: ISSUE: authtime 1562533481, etypes {rep=18 tkt=18 ses=18}, aplicacao2@KAFKA.INFOBARBOSA for kafka/kafka2.infobarbosa.github.com@KAFKA.INFOBARBOSA
@@ -297,7 +297,7 @@ cat dump.txt
 Atenção! **enp0s8** é a interface de rede utilizada para host-only na minha máquina.
 Se o comando nao funcionar entao verifique quais interfaces estao funcionando via **ifconfig** ou **tcpdump --list-interfaces**
 
-Eh isso, pessoal! Autenticacao kerberos e encriptacao funcionando. Espero que tenha funcionado pra voces tambem.
+Eh isso, pessoal! Autenticacao kerberos e encriptacao TLS funcionando. Espero que tenha funcionado pra voces tambem.
 
 Ateh a proxima!
 
