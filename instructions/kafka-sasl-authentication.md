@@ -1,9 +1,10 @@
 # Kafka com autenticacao SASL/GSSAPI 
 
-Se ainda nao iniciou o laboratorio, esta eh a hora.
+Se ainda nao iniciou o laboratorio, esta eh a hora. 
 ```
 vagrant up
 ```
+Caso seja a primeira vez entao aproveite pra ir fazer um cafe, na minha maquina o provisionamento demora uns 20 a 30 minutos pra terminar.
 
 Nesse laboratorio eu jah deixei prontas as keytabs para:
 - **aplicacao1** - aplicacao produtora, escreve em um topico "teste"  no Kafka
